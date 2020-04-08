@@ -23,6 +23,10 @@ const withErrorHandler = (WrappedComponent, axios) => {
       this.setState({ initialized: true });
     }
 
+    errorConfirmedHandler = () => {
+      this.setState({ error: null });
+    };
+
     render() {
       const { initialized } = this.state;
       if (!initialized) return null;
